@@ -8,7 +8,7 @@ Maybe there will be an English version at some point. ;)
 */
 
 int main();
-
+string placeholder;
 
 void website()
 {
@@ -43,89 +43,9 @@ void softwareinfo()
 }
 
 
-void passworddata(int user)
-{
-
-	string password[4];
-	password[0] = "1901";
-	password[1] = "5407";
-	password[2] = "1865";
-	password[3] = "2865";
-
-	string passwordinput[4];
-	password[0];
-	password[1];
-	password[2];
-	password[3];
-
-
-
-	switch (user)
-	{
-	case 1:
-		cout << "\n\nBitte geben Sie Ihr Passwort ein: ";
-		cin >> passwordinput[0];
-		if (password[0] == passwordinput[0])
-		{
-			cout << "Sie wurden erfolgreich angemeldet!";
-			return;
-		}
-		else
-		{
-			cout << "Passwort falsch! Bitte versuchen Sie es erneut!\n";
-		}
-		break;
-
-	case 2:
-		cout << "\n\nGeben Sie Ihr Passwort ein: ";
-		cin >> passwordinput[1];
-		if (password[1] == passwordinput[1])
-		{
-			cout << "Sie wurden erfolgreich angemeldet!\n";
-			return;
-		}
-		else
-		{
-			cout << "Passwort falsch! Bitte versuchen Sie es erneut!\n";
-		}
-		break;
-	case 3:
-		cout << "\n\nGeben Sie Ihr Passwort ein: ";
-		cin >> passwordinput[2];
-		if (password[2] == passwordinput[2])
-		{
-			cout << "Sie wurden erfolgreich angemeldet!";
-			return;
-		}
-		else
-		{
-			cout << "Passwort falsch! Bitte versuchen Sie es erneut!\n";
-		}
-		break;
-	case 4:
-		cout << "\n\nGeben Sie Ihr Passwort ein: ";
-		cin >> passwordinput[3];
-		if (password[3] == passwordinput[3])
-		{
-			cout << "Sie wurden erfolgreich angemeldet!";
-			return;
-		}
-		else
-		{
-			cout << "Passwort falsch! Bitte versuchen Sie es erneut!\n";
-		}
-		break;
-	}
-
-	system("pause");
-	system("cls");
-	main();
-}
-
 void noticefunction()
 {
 	string notice;
-	string placeholder;
 	cout << "Ihre Information/Notiz:\n";
 	getline(cin, placeholder);
 	getline(cin, notice);
@@ -137,6 +57,62 @@ void noticefunction()
 	NOTICE.close();
 }
 
+void markkeyfunction()
+{
+	string markkey[6];
+
+	system("cls");
+	cout << "<BEISPIEL>:\n<Note 1: 35-33>\n\n";
+	cout << "Note 1: ";
+	getline(cin, placeholder);
+	getline(cin, markkey[0]);
+	fstream MARKKEY;
+	MARKKEY.open("ka.txt", ofstream::app);
+	MARKKEY << "Note 1: ";
+	MARKKEY << markkey[0];
+	MARKKEY << " Punkte";
+	MARKKEY.close();
+	cout << "\nNote 2: ";
+	getline(cin, markkey[1]);
+	MARKKEY.open("ka.txt", ofstream::app);
+	MARKKEY << "\nNote 2: ";
+	MARKKEY << markkey[1];
+	MARKKEY << " Punkte";
+	MARKKEY.close();
+	cout << "\nNote 3: ";
+	getline(cin, markkey[2]);
+	MARKKEY.open("ka.txt", ofstream::app);
+	MARKKEY << "\nNote 3: ";
+	MARKKEY << markkey[2];
+	MARKKEY << " Punkte";
+	MARKKEY.close();
+	cout << "\nNote 4: ";
+	getline(cin, markkey[3]);
+	MARKKEY.open("ka.txt", ofstream::app);
+	MARKKEY << "\nNote 4: ";
+	MARKKEY << markkey[3];
+	MARKKEY << " Punkte";
+	MARKKEY.close();
+	cout << "\nNote 5: ";
+	getline(cin, markkey[4]);
+	MARKKEY.open("ka.txt", ofstream::app);
+	MARKKEY << "\nNote 5: ";
+	MARKKEY << markkey[4];
+	MARKKEY << " Punkte";
+	MARKKEY.close();
+	cout << "\nNote 6: ";
+	getline(cin, markkey[5]);
+	MARKKEY.open("ka.txt", ofstream::app);
+	MARKKEY << "\nNote 6: ";
+	MARKKEY << markkey[5];
+	MARKKEY << " Punkte";
+	MARKKEY << "\n\n";
+	MARKKEY.close();
+	cout << endl;
+
+}
+
+
 
 
 void markandsign()
@@ -144,6 +120,7 @@ void markandsign()
 	short points;
 	bool noticebool = false;
 	char noticeyesno = ' ';
+	char markkeyyesno = ' ';
 	system("cls");
 	cout << "\n\nGeben Sie die Gesamtpunktzahl ein: ";
 	cin >> points;
@@ -153,6 +130,22 @@ void markandsign()
 	sign << "Note:\n\n" << "Punkte:   /" << points << endl << endl;
 	sign.close();
 
+	cout << "Möchten Sie einen Notenschlüssel zur KA hinzufügen? J/N\n";
+	cin >> markkeyyesno;
+	switch (markkeyyesno)
+	{
+	case 'J':
+		markkeyfunction();
+		break;
+	case 'j':
+		markkeyfunction();
+		break;
+	default:
+		break;
+	}
+	
+	
+	
 	cout << "Möchten Sie eine Information zur KA hinzufügen? J/N\n";
 	cin >> noticeyesno;
 	switch (noticeyesno)
@@ -177,14 +170,15 @@ void markandsign()
 
 string quest[15];
 string name;
-bool line[15];
-short numberlines[15];
-char yesno[15];
+
 void content()
 {
-	fstream LINE;
+
+	char boollines[15];
+	short linecount[15];
+
 	getline (cin, name);
-	cout << "\n\nBitte geben sie hier ihre 1. Aufgabenstellung ein!\nINFO: Geben Sie 'STOP' ein, sobald Sie alle Aufgaben definiert haben!\n\n";
+	cout << "\n\nBitte geben sie hier ihre 1. Aufgabenstellung + Punkte ein!\nINFO: Geben Sie 'STOP' ein, sobald Sie alle Aufgaben definiert haben!\n\n";
 	getline(cin, quest[0]);
 	cout << "\n\n";
 	fstream a;
@@ -194,8 +188,28 @@ void content()
 	a << endl;
 	a.close();
 
+	cout << "Linien erstellen? J/N\n";
+	cin >> boollines[0];
+	if (boollines[0] == 'J' || boollines[0] == 'j')
+	{
+		cout << "Wie viele Linien?\n";
+		cin >> linecount[0];
+
+		for (linecount[0]; linecount[0] != 0; linecount[0]--)
+		{
+			fstream line1;
+			line1.open("ka.txt", ofstream::app);
+			line1 << "   ________________________________________________________\n";
+			line1.close();
+		}
+	}
+	else
+	{
+	}
+
 
 	cout << "\n\nBitte geben sie hier ihre 2. Aufgabenstellung ein!\n\n";
+	getline(cin, placeholder);
 	getline(cin, quest[1]);
 	cout << "\n\n";
 	if (quest[1] == "STOP")
@@ -212,8 +226,27 @@ void content()
 	b << endl;
 	b.close();
 
+	cout << "Linien erstellen? J/N\n";
+	cin >> boollines[1];
+	if (boollines[1] == 'J' || boollines[1] == 'j')
+	{
+		cout << "Wie viele Linien?\n";
+		cin >> linecount[1];
+
+		for (linecount[1]; linecount[1] != 0; linecount[1]--)
+		{
+			fstream line1;
+			line1.open("ka.txt", ofstream::app);
+			line1 << "   ________________________________________________________\n";
+			line1.close();
+		}
+	}
+	else
+	{
+	}
 
 	cout << "\n\nBitte geben sie hier ihre 3. Aufgabenstellung ein!\n\n";
+	getline(cin, placeholder);
 	getline(cin, quest[2]);
 	cout << "\n\n";
 	if (quest[2] == "STOP")
@@ -230,8 +263,27 @@ void content()
 	c << endl;
 	c.close();
 
-	
+	cout << "Linien erstellen? J/N\n";
+	cin >> boollines[2];
+	if (boollines[2] == 'J' || boollines[2] == 'j')
+	{
+		cout << "Wie viele Linien?\n";
+		cin >> linecount[2];
+
+		for (linecount[2]; linecount[2] != 0; linecount[2]--)
+		{
+			fstream line1;
+			line1.open("ka.txt", ofstream::app);
+			line1 << "   ________________________________________________________\n";
+			line1.close();
+		}
+	}
+	else
+	{
+	}
+
 	cout << "\n\nBitte geben sie hier ihre 4. Aufgabenstellung ein!\n\n";
+	getline(cin, placeholder);
 	getline(cin, quest[3]);
 	cout << "\n\n";
 	if (quest[3] == "STOP")
@@ -248,9 +300,27 @@ void content()
 	d << endl;
 	d.close();
 
-	
+	cout << "Linien erstellen? J/N\n";
+	cin >> boollines[3];
+	if (boollines[3] == 'J' || boollines[3] == 'j')
+	{
+		cout << "Wie viele Linien?\n";
+		cin >> linecount[3];
+
+		for (linecount[3]; linecount[3] != 0; linecount[3]--)
+		{
+			fstream line1;
+			line1.open("ka.txt", ofstream::app);
+			line1 << "   ________________________________________________________\n";
+			line1.close();
+		}
+	}
+	else
+	{
+	}
 
 	cout << "\n\nBitte geben sie hier ihre 5. Aufgabenstellung ein!\n\n";
+	getline(cin, placeholder);
 	getline(cin, quest[4]);
 	cout << "\n\n";
 	if (quest[4] == "STOP")
@@ -267,9 +337,27 @@ void content()
 	e << endl;
 	e.close();
 
-	
+	cout << "Linien erstellen? J/N\n";
+	cin >> boollines[4];
+	if (boollines[4] == 'J' || boollines[4] == 'j')
+	{
+		cout << "Wie viele Linien?\n";
+		cin >> linecount[4];
+
+		for (linecount[4]; linecount[4] != 0; linecount[4]--)
+		{
+			fstream line1;
+			line1.open("ka.txt", ofstream::app);
+			line1 << "   ________________________________________________________";
+			line1.close();
+		}
+	}
+	else
+	{
+	}
 
 	cout << "\n\nBitte geben sie hier ihre 6. Aufgabenstellung ein!\n\n";
+	getline(cin, placeholder);
 	getline(cin, quest[5]);
 	cout << "\n\n";
 	if (quest[5] == "STOP")
@@ -286,9 +374,27 @@ void content()
 	f << endl;
 	f.close();
 
-	
+	cout << "Linien erstellen? J/N\n";
+	cin >> boollines[5];
+	if (boollines[5] == 'J' || boollines[5] == 'j')
+	{
+		cout << "Wie viele Linien?\n";
+		cin >> linecount[5];
+
+		for (linecount[5]; linecount[5] != 0; linecount[5]--)
+		{
+			fstream line1;
+			line1.open("ka.txt", ofstream::app);
+			line1 << "   ________________________________________________________\n";
+			line1.close();
+		}
+	}
+	else
+	{
+	}
 
 	cout << "\n\nBitte geben sie hier ihre 7. Aufgabenstellung ein!\n\n";
+	getline(cin, placeholder);
 	getline(cin, quest[6]);
 	cout << "\n\n";
 	if (quest[6] == "STOP")
@@ -305,9 +411,27 @@ void content()
 	g << endl;
 	g.close();
 
-	
+	cout << "Linien erstellen? J/N\n";
+	cin >> boollines[6];
+	if (boollines[6] == 'J' || boollines[6] == 'j')
+	{
+		cout << "Wie viele Linien?\n";
+		cin >> linecount[0];
+
+		for (linecount[6]; linecount[6] != 0; linecount[6]--)
+		{
+			fstream line1;
+			line1.open("ka.txt", ofstream::app);
+			line1 << "   ________________________________________________________\n";
+			line1.close();
+		}
+	}
+	else
+	{
+	}
 
 	cout << "\n\nBitte geben sie hier ihre 8. Aufgabenstellung ein!\n\n";
+	getline(cin, placeholder);
 	getline(cin, quest[7]);
 	cout << "\n\n";
 	if (quest[7] == "STOP")
@@ -324,8 +448,27 @@ void content()
 	h << endl;
 	h.close();
 
-	
+	cout << "Linien erstellen? J/N\n";
+	cin >> boollines[7];
+	if (boollines[7] == 'J' || boollines[7] == 'j')
+	{
+		cout << "Wie viele Linien?\n";
+		cin >> linecount[7];
+
+		for (linecount[7]; linecount[7] != 0; linecount[7]--)
+		{
+			fstream line1;
+			line1.open("ka.txt", ofstream::app);
+			line1 << "   ________________________________________________________\n";
+			line1.close();
+		}
+	}
+	else
+	{
+	}
+
 	cout << "\n\nBitte geben sie hier ihre 9. Aufgabenstellung ein!\n\n";
+	getline(cin, placeholder);
 	getline(cin, quest[8]);
 	cout << "\n\n";
 	if (quest[8] == "STOP")
@@ -342,9 +485,27 @@ void content()
 	i << endl;
 	i.close();
 
-	
+	cout << "Linien erstellen? J/N\n";
+	cin >> boollines[8];
+	if (boollines[8] == 'J' || boollines[8] == 'j')
+	{
+		cout << "Wie viele Linien?\n";
+		cin >> linecount[8];
+
+		for (linecount[8]; linecount[8] != 0; linecount[8]--)
+		{
+			fstream line1;
+			line1.open("ka.txt", ofstream::app);
+			line1 << "   ________________________________________________________\n";
+			line1.close();
+		}
+	}
+	else
+	{
+	}
 
 	cout << "\n\nBitte geben sie hier ihre 10. Aufgabenstellung ein!\n\n";
+	getline(cin, placeholder);
 	getline(cin, quest[9]);
 	cout << "\n\n";
 	if (quest[9] == "STOP")
@@ -361,9 +522,27 @@ void content()
 	j << endl;
 	j.close();
 
-	
+	cout << "Linien erstellen? J/N\n";
+	cin >> boollines[9];
+	if (boollines[9] == 'J' || boollines[9] == 'j')
+	{
+		cout << "Wie viele Linien?\n";
+		cin >> linecount[9];
+
+		for (linecount[9]; linecount[9] != 0; linecount[9]--)
+		{
+			fstream line1;
+			line1.open("ka.txt", ofstream::app);
+			line1 << "   ________________________________________________________\n";
+			line1.close();
+		}
+	}
+	else
+	{
+	}
 
 	cout << "\n\nBitte geben sie hier ihre 11. Aufgabenstellung ein!\n\n";
+	getline(cin, placeholder);
 	getline(cin, quest[10]);
 	cout << "\n\n";
 	if (quest[10] == "STOP")
@@ -380,9 +559,27 @@ void content()
 	k << endl;
 	k.close();
 
-	
+	cout << "Linien erstellen? J/N\n";
+	cin >> boollines[10];
+	if (boollines[10] == 'J' || boollines[10] == 'j')
+	{
+		cout << "Wie viele Linien?\n";
+		cin >> linecount[10];
+
+		for (linecount[10]; linecount[10] != 0; linecount[10]--)
+		{
+			fstream line1;
+			line1.open("ka.txt", ofstream::app);
+			line1 << "   ________________________________________________________\n";
+			line1.close();
+		}
+	}
+	else
+	{
+	}
 
 	cout << "\n\nBitte geben sie hier ihre 12. Aufgabenstellung ein!\n\n";
+	getline(cin, placeholder);
 	getline(cin, quest[11]);
 	cout << "\n\n";
 	if (quest[11] == "STOP")
@@ -399,9 +596,27 @@ void content()
 	l << endl;
 	l.close();
 
-	
+	cout << "Linien erstellen? J/N\n";
+	cin >> boollines[11];
+	if (boollines[11] == 'J' || boollines[11] == 'j')
+	{
+		cout << "Wie viele Linien?\n";
+		cin >> linecount[11];
+
+		for (linecount[11]; linecount[11] != 0; linecount[11]--)
+		{
+			fstream line1;
+			line1.open("ka.txt", ofstream::app);
+			line1 << "   ________________________________________________________\n";
+			line1.close();
+		}
+	}
+	else
+	{
+	}
 
 	cout << "\n\nBitte geben sie hier ihre 13. Aufgabenstellung ein!\n\n";
+	getline(cin, placeholder);
 	getline(cin, quest[12]);
 	cout << "\n\n";
 	if (quest[12] == "STOP")
@@ -418,8 +633,27 @@ void content()
 	m << endl;
 	m.close();
 
-	
+	cout << "Linien erstellen? J/N\n";
+	cin >> boollines[12];
+	if (boollines[12] == 'J' || boollines[12] == 'j')
+	{
+		cout << "Wie viele Linien?\n";
+		cin >> linecount[12];
+
+		for (linecount[12]; linecount[12] != 0; linecount[12]--)
+		{
+			fstream line1;
+			line1.open("ka.txt", ofstream::app);
+			line1 << "   ________________________________________________________\n";
+			line1.close();
+		}
+	}
+	else
+	{
+	}
+
 	cout << "\n\nBitte geben sie hier ihre 14. Aufgabenstellung ein!\n\n";
+	getline(cin, placeholder);
 	getline(cin, quest[13]);
 	cout << "\n\n";
 	if (quest[13] == "STOP")
@@ -436,9 +670,27 @@ void content()
 	n << endl;
 	n.close();
 
-	
+	cout << "Linien erstellen? J/N\n";
+	cin >> boollines[13];
+	if (boollines[13] == 'J' || boollines[13] == 'j')
+	{
+		cout << "Wie viele Linien?\n";
+		cin >> linecount[13];
+
+		for (linecount[13]; linecount[13] != 0; linecount[13]--)
+		{
+			fstream line1;
+			line1.open("ka.txt", ofstream::app);
+			line1 << "   ________________________________________________________\n";
+			line1.close();
+		}
+	}
+	else
+	{
+	}
 
 	cout << "\n\nBitte geben sie hier ihre 15. Aufgabenstellung ein!\n\n";
+	getline(cin, placeholder);
 	getline(cin, quest[14]);
 	cout << "\n\n";
 	if (quest[14] == "STOP")
@@ -455,7 +707,25 @@ void content()
 	o << endl;
 	o.close();
 
-	
+	cout << "Linien erstellen? J/N\n";
+	cin >> boollines[14];
+	if (boollines[14] == 'J' || boollines[14] == 'j')
+	{
+		cout << "Wie viele Linien?\n";
+		cin >> linecount[14];
+
+		for (linecount[14]; linecount[14] != 0; linecount[14]--)
+		{
+			fstream line1;
+			line1.open("ka.txt", ofstream::app);
+			line1 << "   ________________________________________________________\n";
+			line1.close();
+		}
+	}
+	else
+	{
+	}
+
 
 	markandsign();
 }
@@ -463,68 +733,30 @@ void content()
 char answer = ' ';
 
 
+void error()
+{
+	cout << "\n\nEingabe ungültig! Versuchen Sie es erneut!\n";
+	system("pause");
+	system("cls");
+	main();
+}
+
 
 int main()
 {
 	SetConsoleOutputCP(1252); // für Umlaut-Ausgabe
 	SetConsoleCP(1252); // für Umlaut-Eingabe
 
-
-	bool licence = true;
 	string subject;
 	string theme;
 	string placeholder;
 	char date[10];
 	cout << "Willkommen bei KA-Writer! Hier können Sie Klassenarbeiten einfach und schnell erstellen!\nCode wrote in C++ by LiQ | Function ideas by WWW\nBETA VERSION " << VERSION_MAJOR << "." << VERSION_MINOR<< "\n\n";
-	cout << "Bitte melden Sie sich an!\n\n" << "ID: ";
-	string inputbenutzername;
-	string b1 = "Westphal";
-	string b2 = "Thurm";
-	string b3 = "Zerbe";
-	string b4 = "Hösler";
-	string info = "Info";
-	cin >> inputbenutzername;
+	system("pause");
+	system("cls");
+	cout << "KA-Writer v" << VERSION_MAJOR << "." << VERSION_MINOR;
 
-
-	if (inputbenutzername == b1)
-	{
-		passworddata(1);
-	}
-
-
-	else if (inputbenutzername == b2)
-	{
-		passworddata(2);
-	}
-
-
-	else if (inputbenutzername == b3)
-	{
-		passworddata(3);
-	}
-
-
-	else if (inputbenutzername == b4)
-	{
-		passworddata(4);
-	}
-
-
-	else if (inputbenutzername == info)
-	{
-		softwareinfo();
-	}
-
-	
-	else
-	{
-		cout << "\n\nBenutzername nicht verfügbar!\nBitte geben Sie einen gültigen Benutzernamen ein!\n\n" << endl;
-		system("pause");
-		system("cls");
-		main();
-	}
-	
-	cout << "\nFür welches Fach ist diese KA gedacht?" << endl;
+	cout << "\n\nFür welches Fach ist diese KA gedacht?" << endl;
 	cin >> subject;
 
 	cout << "\nÜber welches Thema?" << endl;
