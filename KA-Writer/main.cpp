@@ -173,7 +173,7 @@ string name;
 
 void content()
 {
-
+	char voidorlines;
 	char boollines[15];
 	short linecount[15];
 
@@ -188,20 +188,58 @@ void content()
 	a << endl;
 	a.close();
 
-	cout << "Linien erstellen? J/N\n";
+	cout << "Platz erstellen? J/N\n";
 	cin >> boollines[0];
 	if (boollines[0] == 'J' || boollines[0] == 'j')
 	{
-		cout << "Wie viele Linien?\n";
+		cout << "<L>inien oder <F>reier Platz?\n";
+		cin >> voidorlines;
+		cout << "Wie viel Platz?\n";
 		cin >> linecount[0];
 
-		for (linecount[0]; linecount[0] != 0; linecount[0]--)
+		switch (voidorlines)
 		{
-			fstream line1;
-			line1.open("ka.txt", ofstream::app);
-			line1 << "   ________________________________________________________\n";
-			line1.close();
+		case 'L':	
+			for (linecount[0]; linecount[0] != 0; linecount[0]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'l':
+			for (linecount[0]; linecount[0] != 0; linecount[0]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'F':
+			for (linecount[0]; linecount[0] != 0; linecount[0]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		case 'f':
+			for (linecount[0]; linecount[0] != 0; linecount[0]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		default:
+			cout << "Ungültige Eingabe!\n\n";
+			break;
 		}
+	
 	}
 	else
 	{
@@ -226,19 +264,56 @@ void content()
 	b << endl;
 	b.close();
 
-	cout << "Linien erstellen? J/N\n";
+	cout << "Platz erstellen? J/N\n";
 	cin >> boollines[1];
 	if (boollines[1] == 'J' || boollines[1] == 'j')
 	{
-		cout << "Wie viele Linien?\n";
+		cout << "<L>inien oder <F>reier Platz?\n";
+		cin >> voidorlines;
+		cout << "Wie viel Platz?\n";
 		cin >> linecount[1];
 
-		for (linecount[1]; linecount[1] != 0; linecount[1]--)
+		switch (voidorlines)
 		{
-			fstream line1;
-			line1.open("ka.txt", ofstream::app);
-			line1 << "   ________________________________________________________\n";
-			line1.close();
+		case 'L':
+			for (linecount[1]; linecount[1] != 0; linecount[1]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'l':
+			for (linecount[1]; linecount[1] != 0; linecount[1]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'F':
+			for (linecount[1]; linecount[1] != 0; linecount[1]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		case 'f':
+			for (linecount[1]; linecount[1] != 0; linecount[1]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		default:
+			cout << "Ungültige Eingabe!\n\n";
+			break;
 		}
 	}
 	else
@@ -263,19 +338,56 @@ void content()
 	c << endl;
 	c.close();
 
-	cout << "Linien erstellen? J/N\n";
+	cout << "Platz erstellen? J/N\n";
 	cin >> boollines[2];
 	if (boollines[2] == 'J' || boollines[2] == 'j')
 	{
-		cout << "Wie viele Linien?\n";
+		cout << "<L>inien oder <F>reier Platz?\n";
+		cin >> voidorlines;
+		cout << "Wie viel Platz?\n";
 		cin >> linecount[2];
 
-		for (linecount[2]; linecount[2] != 0; linecount[2]--)
+		switch (voidorlines)
 		{
-			fstream line1;
-			line1.open("ka.txt", ofstream::app);
-			line1 << "   ________________________________________________________\n";
-			line1.close();
+		case 'L':
+			for (linecount[2]; linecount[2] != 0; linecount[2]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'l':
+			for (linecount[2]; linecount[2] != 0; linecount[2]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'F':
+			for (linecount[2]; linecount[2] != 0; linecount[2]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		case 'f':
+			for (linecount[2]; linecount[2] != 0; linecount[2]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		default:
+			cout << "Ungültige Eingabe!\n\n";
+			break;
 		}
 	}
 	else
@@ -300,19 +412,56 @@ void content()
 	d << endl;
 	d.close();
 
-	cout << "Linien erstellen? J/N\n";
+	cout << "Platz erstellen? J/N\n";
 	cin >> boollines[3];
 	if (boollines[3] == 'J' || boollines[3] == 'j')
 	{
-		cout << "Wie viele Linien?\n";
+		cout << "<L>inien oder <F>reier Platz?\n";
+		cin >> voidorlines;
+		cout << "Wie viel Platz?\n";
 		cin >> linecount[3];
 
-		for (linecount[3]; linecount[3] != 0; linecount[3]--)
+		switch (voidorlines)
 		{
-			fstream line1;
-			line1.open("ka.txt", ofstream::app);
-			line1 << "   ________________________________________________________\n";
-			line1.close();
+		case 'L':
+			for (linecount[3]; linecount[3] != 0; linecount[3]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'l':
+			for (linecount[3]; linecount[3] != 0; linecount[3]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'F':
+			for (linecount[3]; linecount[3] != 0; linecount[3]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		case 'f':
+			for (linecount[3]; linecount[3] != 0; linecount[3]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		default:
+			cout << "Ungültige Eingabe!\n\n";
+			break;
 		}
 	}
 	else
@@ -337,19 +486,56 @@ void content()
 	e << endl;
 	e.close();
 
-	cout << "Linien erstellen? J/N\n";
+	cout << "Platz erstellen? J/N\n";
 	cin >> boollines[4];
 	if (boollines[4] == 'J' || boollines[4] == 'j')
 	{
-		cout << "Wie viele Linien?\n";
+		cout << "<L>inien oder <F>reier Platz?\n";
+		cin >> voidorlines;
+		cout << "Wie viel Platz?\n";
 		cin >> linecount[4];
 
-		for (linecount[4]; linecount[4] != 0; linecount[4]--)
+		switch (voidorlines)
 		{
-			fstream line1;
-			line1.open("ka.txt", ofstream::app);
-			line1 << "   ________________________________________________________";
-			line1.close();
+		case 'L':
+			for (linecount[4]; linecount[4] != 0; linecount[4]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'l':
+			for (linecount[4]; linecount[4] != 0; linecount[4]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'F':
+			for (linecount[4]; linecount[4] != 0; linecount[4]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		case 'f':
+			for (linecount[4]; linecount[4] != 0; linecount[4]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		default:
+			cout << "Ungültige Eingabe!\n\n";
+			break;
 		}
 	}
 	else
@@ -374,19 +560,56 @@ void content()
 	f << endl;
 	f.close();
 
-	cout << "Linien erstellen? J/N\n";
+	cout << "Platz erstellen? J/N\n";
 	cin >> boollines[5];
 	if (boollines[5] == 'J' || boollines[5] == 'j')
 	{
-		cout << "Wie viele Linien?\n";
+		cout << "<L>inien oder <F>reier Platz?\n";
+		cin >> voidorlines;
+		cout << "Wie viel Platz?\n";
 		cin >> linecount[5];
 
-		for (linecount[5]; linecount[5] != 0; linecount[5]--)
+		switch (voidorlines)
 		{
-			fstream line1;
-			line1.open("ka.txt", ofstream::app);
-			line1 << "   ________________________________________________________\n";
-			line1.close();
+		case 'L':
+			for (linecount[5]; linecount[5] != 0; linecount[5]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'l':
+			for (linecount[5]; linecount[5] != 0; linecount[5]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'F':
+			for (linecount[5]; linecount[5] != 0; linecount[5]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		case 'f':
+			for (linecount[5]; linecount[5] != 0; linecount[5]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		default:
+			cout << "Ungültige Eingabe!\n\n";
+			break;
 		}
 	}
 	else
@@ -411,19 +634,56 @@ void content()
 	g << endl;
 	g.close();
 
-	cout << "Linien erstellen? J/N\n";
+	cout << "Platz erstellen? J/N\n";
 	cin >> boollines[6];
 	if (boollines[6] == 'J' || boollines[6] == 'j')
 	{
-		cout << "Wie viele Linien?\n";
-		cin >> linecount[0];
+		cout << "<L>inien oder <F>reier Platz?\n";
+		cin >> voidorlines;
+		cout << "Wie viel Platz?\n";
+		cin >> linecount[6];
 
-		for (linecount[6]; linecount[6] != 0; linecount[6]--)
+		switch (voidorlines)
 		{
-			fstream line1;
-			line1.open("ka.txt", ofstream::app);
-			line1 << "   ________________________________________________________\n";
-			line1.close();
+		case 'L':
+			for (linecount[6]; linecount[6] != 0; linecount[6]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'l':
+			for (linecount[6]; linecount[6] != 0; linecount[6]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'F':
+			for (linecount[6]; linecount[6] != 0; linecount[6]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		case 'f':
+			for (linecount[6]; linecount[6] != 0; linecount[6]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		default:
+			cout << "Ungültige Eingabe!\n\n";
+			break;
 		}
 	}
 	else
@@ -448,19 +708,56 @@ void content()
 	h << endl;
 	h.close();
 
-	cout << "Linien erstellen? J/N\n";
+	cout << "Platz erstellen? J/N\n";
 	cin >> boollines[7];
 	if (boollines[7] == 'J' || boollines[7] == 'j')
 	{
-		cout << "Wie viele Linien?\n";
+		cout << "<L>inien oder <F>reier Platz?\n";
+		cin >> voidorlines;
+		cout << "Wie viel Platz?\n";
 		cin >> linecount[7];
 
-		for (linecount[7]; linecount[7] != 0; linecount[7]--)
+		switch (voidorlines)
 		{
-			fstream line1;
-			line1.open("ka.txt", ofstream::app);
-			line1 << "   ________________________________________________________\n";
-			line1.close();
+		case 'L':
+			for (linecount[7]; linecount[7] != 0; linecount[7]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'l':
+			for (linecount[7]; linecount[7] != 0; linecount[7]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'F':
+			for (linecount[7]; linecount[7] != 0; linecount[7]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		case 'f':
+			for (linecount[7]; linecount[7] != 0; linecount[7]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		default:
+			cout << "Ungültige Eingabe!\n\n";
+			break;
 		}
 	}
 	else
@@ -485,19 +782,56 @@ void content()
 	i << endl;
 	i.close();
 
-	cout << "Linien erstellen? J/N\n";
+	cout << "Platz erstellen? J/N\n";
 	cin >> boollines[8];
 	if (boollines[8] == 'J' || boollines[8] == 'j')
 	{
-		cout << "Wie viele Linien?\n";
+		cout << "<L>inien oder <F>reier Platz?\n";
+		cin >> voidorlines;
+		cout << "Wie viel Platz?\n";
 		cin >> linecount[8];
 
-		for (linecount[8]; linecount[8] != 0; linecount[8]--)
+		switch (voidorlines)
 		{
-			fstream line1;
-			line1.open("ka.txt", ofstream::app);
-			line1 << "   ________________________________________________________\n";
-			line1.close();
+		case 'L':
+			for (linecount[8]; linecount[8] != 0; linecount[8]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'l':
+			for (linecount[8]; linecount[8] != 0; linecount[8]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'F':
+			for (linecount[8]; linecount[8] != 0; linecount[8]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		case 'f':
+			for (linecount[8]; linecount[8] != 0; linecount[8]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		default:
+			cout << "Ungültige Eingabe!\n\n";
+			break;
 		}
 	}
 	else
@@ -522,19 +856,56 @@ void content()
 	j << endl;
 	j.close();
 
-	cout << "Linien erstellen? J/N\n";
+	cout << "Platz erstellen? J/N\n";
 	cin >> boollines[9];
 	if (boollines[9] == 'J' || boollines[9] == 'j')
 	{
-		cout << "Wie viele Linien?\n";
+		cout << "<L>inien oder <F>reier Platz?\n";
+		cin >> voidorlines;
+		cout << "Wie viel Platz?\n";
 		cin >> linecount[9];
 
-		for (linecount[9]; linecount[9] != 0; linecount[9]--)
+		switch (voidorlines)
 		{
-			fstream line1;
-			line1.open("ka.txt", ofstream::app);
-			line1 << "   ________________________________________________________\n";
-			line1.close();
+		case 'L':
+			for (linecount[9]; linecount[9] != 0; linecount[9]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'l':
+			for (linecount[9]; linecount[9] != 0; linecount[9]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'F':
+			for (linecount[9]; linecount[9] != 0; linecount[9]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		case 'f':
+			for (linecount[9]; linecount[9] != 0; linecount[9]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		default:
+			cout << "Ungültige Eingabe!\n\n";
+			break;
 		}
 	}
 	else
@@ -559,19 +930,56 @@ void content()
 	k << endl;
 	k.close();
 
-	cout << "Linien erstellen? J/N\n";
+	cout << "Platz erstellen? J/N\n";
 	cin >> boollines[10];
 	if (boollines[10] == 'J' || boollines[10] == 'j')
 	{
-		cout << "Wie viele Linien?\n";
+		cout << "<L>inien oder <F>reier Platz?";
+		cin >> voidorlines;
+		cout << "Wie viel Platz?\n";
 		cin >> linecount[10];
 
-		for (linecount[10]; linecount[10] != 0; linecount[10]--)
+		switch (voidorlines)
 		{
-			fstream line1;
-			line1.open("ka.txt", ofstream::app);
-			line1 << "   ________________________________________________________\n";
-			line1.close();
+		case 'L':
+			for (linecount[10]; linecount[10] != 0; linecount[10]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'l':
+			for (linecount[10]; linecount[10] != 0; linecount[10]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'F':
+			for (linecount[10]; linecount[10] != 0; linecount[10]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		case 'f':
+			for (linecount[10]; linecount[10] != 0; linecount[10]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		default:
+			cout << "Ungültige Eingabe!\n\n";
+			break;
 		}
 	}
 	else
@@ -596,19 +1004,56 @@ void content()
 	l << endl;
 	l.close();
 
-	cout << "Linien erstellen? J/N\n";
+	cout << "Platz erstellen? J/N\n";
 	cin >> boollines[11];
 	if (boollines[11] == 'J' || boollines[11] == 'j')
 	{
-		cout << "Wie viele Linien?\n";
+		cout << "<L>inien oder <F>reier Platz?";
+		cin >> voidorlines;
+		cout << "Wie viel Platz?\n";
 		cin >> linecount[11];
 
-		for (linecount[11]; linecount[11] != 0; linecount[11]--)
+		switch (voidorlines)
 		{
-			fstream line1;
-			line1.open("ka.txt", ofstream::app);
-			line1 << "   ________________________________________________________\n";
-			line1.close();
+		case 'L':
+			for (linecount[11]; linecount[11] != 0; linecount[11]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'l':
+			for (linecount[11]; linecount[11] != 0; linecount[11]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'F':
+			for (linecount[11]; linecount[11] != 0; linecount[11]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		case 'f':
+			for (linecount[11]; linecount[11] != 0; linecount[11]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		default:
+			cout << "Ungültige Eingabe!\n\n";
+			break;
 		}
 	}
 	else
@@ -633,19 +1078,56 @@ void content()
 	m << endl;
 	m.close();
 
-	cout << "Linien erstellen? J/N\n";
+	cout << "Platz erstellen? J/N\n";
 	cin >> boollines[12];
 	if (boollines[12] == 'J' || boollines[12] == 'j')
 	{
-		cout << "Wie viele Linien?\n";
+		cout << "<L>inien oder <F>reier Platz?";
+		cin >> voidorlines;
+		cout << "Wie viel Platz?\n";
 		cin >> linecount[12];
 
-		for (linecount[12]; linecount[12] != 0; linecount[12]--)
+		switch (voidorlines)
 		{
-			fstream line1;
-			line1.open("ka.txt", ofstream::app);
-			line1 << "   ________________________________________________________\n";
-			line1.close();
+		case 'L':
+			for (linecount[12]; linecount[12] != 0; linecount[12]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'l':
+			for (linecount[12]; linecount[12] != 0; linecount[12]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'F':
+			for (linecount[12]; linecount[12] != 0; linecount[12]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		case 'f':
+			for (linecount[12]; linecount[12] != 0; linecount[12]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		default:
+			cout << "Ungültige Eingabe!\n\n";
+			break;
 		}
 	}
 	else
@@ -670,19 +1152,56 @@ void content()
 	n << endl;
 	n.close();
 
-	cout << "Linien erstellen? J/N\n";
+	cout << "Platz erstellen? J/N\n";
 	cin >> boollines[13];
 	if (boollines[13] == 'J' || boollines[13] == 'j')
 	{
-		cout << "Wie viele Linien?\n";
+		cout << "<L>inien oder <F>reier Platz?";
+		cin >> voidorlines;
+		cout << "Wie viel Platz?\n";
 		cin >> linecount[13];
 
-		for (linecount[13]; linecount[13] != 0; linecount[13]--)
+		switch (voidorlines)
 		{
-			fstream line1;
-			line1.open("ka.txt", ofstream::app);
-			line1 << "   ________________________________________________________\n";
-			line1.close();
+		case 'L':
+			for (linecount[13]; linecount[13] != 0; linecount[13]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'l':
+			for (linecount[13]; linecount[13] != 0; linecount[13]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'F':
+			for (linecount[13]; linecount[13] != 0; linecount[13]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		case 'f':
+			for (linecount[13]; linecount[13] != 0; linecount[13]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		default:
+			cout << "Ungültige Eingabe!\n\n";
+			break;
 		}
 	}
 	else
@@ -707,19 +1226,56 @@ void content()
 	o << endl;
 	o.close();
 
-	cout << "Linien erstellen? J/N\n";
+	cout << "Platz erstellen? J/N\n";
 	cin >> boollines[14];
 	if (boollines[14] == 'J' || boollines[14] == 'j')
 	{
-		cout << "Wie viele Linien?\n";
+		cout << "<L>inien oder <F>reier Platz?";
+		cin >> voidorlines;
+		cout << "Wie viel Platz?\n";
 		cin >> linecount[14];
 
-		for (linecount[14]; linecount[14] != 0; linecount[14]--)
+		switch (voidorlines)
 		{
-			fstream line1;
-			line1.open("ka.txt", ofstream::app);
-			line1 << "   ________________________________________________________\n";
-			line1.close();
+		case 'L':
+			for (linecount[14]; linecount[14] != 0; linecount[14]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'l':
+			for (linecount[14]; linecount[14] != 0; linecount[14]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "   ________________________________________________________\n";
+				line1.close();
+			}
+			break;
+		case 'F':
+			for (linecount[14]; linecount[14] != 0; linecount[14]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		case 'f':
+			for (linecount[14]; linecount[14] != 0; linecount[14]--)
+			{
+				fstream line1;
+				line1.open("ka.txt", ofstream::app);
+				line1 << "\n";
+				line1.close();
+			}
+			break;
+		default:
+			cout << "Ungültige Eingabe!\n\n";
+			break;
 		}
 	}
 	else
